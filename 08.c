@@ -23,5 +23,18 @@ int main(void)
 
     // as you can see, it has changed.
     printf("%d\n", a);
+
+    // when declaring pointers
+    // the * is where hte poitner is
+    // example.. a is not a pointer
+    int a, *b;
+    // other example, c is a pointer
+    int *c, d;
+
+    // pointers can be set to NULL which means uninitialized
+    // Will crash if you try to dereference them
+    // int *j = NULL;
+    // *j;
+
     return 0;
 }
