@@ -38,5 +38,13 @@ int main(void)
     // check it!
     pp = points;
     while (pp < points + 3)
-        printf("address %p, x: %d, y: %d\n", pp, (*pp).x, (*pp++).y);
+        // ERROR: DO NOT DO THIS IN REAL LIFE, ARGUMENT EXECUTION ORDER IN C IS NOT GUARANTEED!!!
+        printf("address %p, x: %d, y: %d\n", pp, (*pp).x, (*(pp++)).y);
+
+    pp = points;
+    // I don't like the above, it lacks a certain fancyness
+    // how about this!
+    while (printf("address %p, x: %d, y: %d\n", pp, (*pp).x, (*pp).y), ++pp < points + 3)
+    {
+    }
 }
